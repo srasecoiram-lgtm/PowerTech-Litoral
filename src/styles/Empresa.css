@@ -1,0 +1,72 @@
+.empresa {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.topo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.bloco {
+  flex: 1 1 45%;
+}
+
+.bloco img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.bloco h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.bloco p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.mvv h2 {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.blocos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.card {
+  flex: 1 1 30%;
+  min-width: 280px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.6;
+}

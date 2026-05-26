@@ -1,0 +1,73 @@
+.video-card {
+  width: 320px;
+  display:inline-block ;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: 'Arial', sans-serif;
+}
+
+.card-media {
+  position:relative;
+  width: 100%;
+  height: auto;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* centraliza horizontalmente */
+  gap: 24px; /* espaço entre os cards */
+  flex-wrap: wrap; /* quebra para próxima linha em telas pequenas */
+  padding: 20px;
+}
+
+
+
+.thumbnail-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.thumbnail {
+  width: 100%;
+  display: block;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #b30000;
+  color: #fff;
+  font-size: 36px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.thumbnail-container:hover .play-icon {
+  opacity: 1;
+}
+
+.card-title {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 12px 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #000;
+}
+
+.video-player {
+  width: 100%;
+  height: auto;
+  display: block;
+}
