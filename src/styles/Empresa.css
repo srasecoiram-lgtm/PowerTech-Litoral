@@ -1,10 +1,11 @@
 .empresa {
-  padding: 40px 20px;
+  padding: 55px 20px 68px;
   max-width: 1200px;
   margin: 0 auto;
-  font-family: Arial, sans-serif;
-  color: #333;
+  color: var(--ink);
 }
+
+.empresa-titulo { margin-bottom: 1.5rem; }
 
 .topo {
   display: flex;
@@ -31,7 +32,7 @@
 }
 
 .bloco p {
-  font-size: 15px;
+  color: var(--muted);
   line-height: 1.6;
 }
 
@@ -49,8 +50,12 @@
 }
 
 .card {
-  flex: 1 1 30%;
-  min-width: 280px;
+  flex: 1 1 260px;
+  min-width: 0;
+  background: var(--white);
+  padding: .9rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
 }
 
 .card img {
@@ -67,6 +72,14 @@
 }
 
 .card p {
-  font-size: 14px;
+  color: var(--muted);
   line-height: 1.6;
+}
+
+.empresa-cta { padding: clamp(1rem, 5vw, 2.2rem); background: var(--navy); color: var(--white); border-radius: 16px; margin-top: 2.5rem; }
+.empresa-cta p { margin-top: .55rem; color: #dce9f6; }
+.empresa-cta-botoes { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .95rem; }
+
+@media (max-width: 640px) {
+  .bloco { flex-basis: 100%; }
 }

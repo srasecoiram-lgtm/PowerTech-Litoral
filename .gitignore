@@ -50,3 +50,6 @@ coverage
 # Misc
 *.pem
 .vercel
+# Arquivos locais de configuração
+.env.*
+!.env.example

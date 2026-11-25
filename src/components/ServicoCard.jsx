@@ -1,11 +1,9 @@
-import React from "react";
-
 export default function ServicoCard({ nome, imagem, categoria, cor }) {
   return (
-    <div className={`servico-card ${cor}`} role="article" aria-label={`${nome} - ${categoria}`}>
+    <div className={`servico-card ${cor}`}>
       <img
         src={imagem}
-        alt={`${nome} - serviço de ${categoria} no Litoral de SP`}
+        alt=""
         loading="lazy"
         width="72"
         height="72"

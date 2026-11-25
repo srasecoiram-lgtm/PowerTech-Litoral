@@ -1,0 +1,29 @@
+# Arquivo do build estático para Apache e LiteSpeed.
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Contém o site na pasta pública e não expõe metadados ou listagens.
+  RewriteRule "(^|/)\.(?!well-known(?:/|$))" - [F,L]
+  RewriteRule "^(?:backend|src|scripts|node_modules)(?:/|$)" - [F,L]
+  RewriteRule "^(?:package(?:-lock)?\.json|vite\.config\.js)(?:/|$)" - [F,L]
+  RewriteRule ^$ /index.html [L]
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^([a-z0-9-]+(?:/[a-z0-9-]+)*)/?$ /$1/index.html [L]
+  RewriteRule ^ - [R=404,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set Content-Security-Policy "default-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'none'; script-src 'self' https://www.googletagmanager.com https://www.googleadservices.com https://www.google.com; style-src 'self'; img-src 'self' data: https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://www.google.com https://www.google.com.br; connect-src 'self' https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://www.google.com https://www.google.com.br https://ad.doubleclick.net; frame-src https://www.googletagmanager.com; font-src 'self'; media-src 'self'"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  Header always set Strict-Transport-Security "max-age=15552000"
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
